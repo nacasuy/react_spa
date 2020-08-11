@@ -1,0 +1,583 @@
+@import '~gg-design-system/scss/themes/theme-admanager';
+@import '~gg-design-system/scss/main';
+
+
+/* Layout Overrides */
+.gds-page-header__primary-nav {
+    min-width: 60px;
+}
+
+.gds-page-header__secondary-nav {
+    position: relative;
+
+    &::before {
+        display: none;
+    }
+}
+
+.gds-page-header__breadcrumb-nav {
+    margin-left: 0 !important;
+}
+
+/* Disable the click and hover behavior for the title section in the menu, which won't link to an actual page. Publisher report for instance */
+span.gds-persist-nav__link {
+    pointer-events: none;
+}
+
+.gds-layout__container {
+    min-height: 100%; // fixes overlay height
+}
+
+.gds-account-modal {
+    margin-top: 5rem;
+}
+
+/* Improves modal styles */
+.gds-modal__overlay {
+    display: flex;
+}
+
+.gds-modal {
+    position: fixed;
+    max-height: 100%;
+}
+
+.--modal-override {
+    max-width: 1250px;
+    max-height: 80vh;
+
+    .gds-modal__form {
+        height: 100%;
+    }
+}
+
+.--modal-bulk-override {
+    height: 80vh;
+}
+
+/* Spinner css classes */
+.gds-input-spinner-pos {
+    position: absolute;
+    top: 27px;
+    right: 10px;
+    z-index: 900;
+}
+
+.gds-input-spinner {
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    animation: loading 3s linear infinite;
+}
+
+.gds-input-spinner-inner {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 57;
+    stroke-width: 2px;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    animation: loading-circle 2s ease-out infinite;
+    fill: transparent;
+}
+
+.gds-form-group.-disabled {
+    pointer-events: none;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading-circle {
+    0% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: -113;
+    }
+}
+
+body:not(.user-is-tabbing) *:focus {
+    outline: none;
+}
+
+/**
+* Search icon SearchSingleSelect
+*/
+.search-icon {
+    position: absolute;
+    top: 0.6rem;
+    right: 6px;
+}
+
+.gds-search-select__clear {
+    right: 24px;
+    z-index: auto;
+}
+
+.gds-search-select__clear {
+    right: 24px;
+}
+
+.gds-search-select__control input {
+    padding-right: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gds-form-group__checkbox--xs .gds-search-select__menu-item {
+    font-size: 0.7rem;
+}
+
+.campaign-overview-dependency-table tbody {
+    display: block !important;
+    height: 220px !important;
+    overflow-y: auto !important;
+}
+
+.campaign-overview-dependency-table thead,
+.campaign-overview-dependency-table tbody tr {
+    display: table !important;
+    width: 100% !important;
+}
+
+/** invisable wrapper button */
+.wrapper-button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/** Script Sets */
+.primary-badge-color span {
+    background-color: #949494;
+}
+
+.primary-badge-color:hover span {
+    background-color: #0085a5 !important;
+}
+
+.primary-badge-color i {
+    color: #949494;
+}
+
+.primary-badge-color:hover i {
+    color: #0085a5 !important;
+}
+
+.script-set-title-wrapper {
+    background: rgb(241, 241, 241);
+    border-bottom: 2px solid rgb(0, 133, 165);
+}
+
+/** Loading */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 500;
+
+    &.opaque {
+        background: white;
+    }
+}
+
+/* Programmatic Table Override */
+.programmatic-list-table {
+    td {
+        max-width: 300px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/** Table Rows */
+.link-table-cell {
+    display: block;
+    padding: 0.5rem 0.3rem;
+    width: 100%;
+    height: 100%;
+}
+
+.link-text-color {
+    color: #0085a5 !important;
+}
+
+.long-string-wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gds-accordion__child-items {
+    user-select: text;
+}
+
+.gds-accordion__item--active > .gds-accordion__child-items,
+.gds-accordion__item--active > .gds-multi-select__sub-menu {
+    max-height: 500px;
+}
+
+/* the shadow of the accordion content does now keep at the bottom, removing it for now */
+.gds-accordion__child-items:after,
+.gds-multi-select__sub-menu:after {
+    box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.2);
+}
+
+.gds-multi-select__button {
+    z-index: auto;
+}
+
+.table-selectable {
+    user-select: text;
+}
+
+/**
+ * CSS For TooltipBlock component
+ */
+.tooltip-block {
+    cursor: pointer;
+}
+
+.tooltip-block__message {
+    visibility: hidden;
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    min-width: 300px;
+    padding: 1rem;
+    border-radius: 3px;
+    background-color: #5f5f5f;
+    color: white;
+    cursor: initial;
+    opacity: 0;
+    transition: opacity 200ms, visibility 0s 200ms;
+}
+
+.tooltip-block:hover .tooltip-block__message {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 200ms, visibility 0s;
+}
+
+.tooltip-block__top {
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.tooltip-block__top-left {
+    transform: translate(-100%, -100%);
+}
+
+.tooltip-block__top-right {
+    left: 100%;
+    transform: translate(0%, -100%);
+}
+
+.tooltip-block__right {
+    left: 100%;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+.tooltip-left {
+    top: 50%;
+    transform: translate(-100%, -50%);
+}
+
+.tooltip-block__bottom-left {
+    top: 100%;
+    transform: translate(-100%, 0%);
+}
+
+.tooltip-block__bottom {
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, 0%);
+}
+
+.tooltip-block__bottom-right {
+    left: 100%;
+    top: 100%;
+    transform: translate(0%, 0%);
+}
+
+.gds-form-group__text-area-input {
+    line-height: 1.8;
+}
+
+/* Restrictions divider */
+.divider-section .gds-divider__label {
+    font-family: inherit;
+    color: #c4c4c4;
+    text-transform: none;
+}
+
+/**
+* React DatePicker
+*/
+
+.react-datepicker__close-icon {
+    right: 0;
+    bottom: 50%;
+}
+
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.react-datepicker__input-container {
+    width: 100%;
+}
+
+.react-datepicker--time-only .react-datepicker__time-box {
+    border-radius: 0;
+}
+
+.react-datepicker__time-container,
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+    width: 100px;
+}
+
+.react-datepicker__close-icon::after {
+    background: none;
+    color: #acacac;
+    padding: 1px;
+    border: solid 1px #acacac;
+}
+
+.react-datepicker__close-icon:hover::after {
+    background: none;
+    color: #007591;
+    border: solid 1px #007591;
+}
+
+.is-right-aligned .react-datepicker-popper {
+    min-width: 244px !important;
+    left: initial !important;
+    right: 0;
+}
+
+.is-right-aligned .react-datepicker-popper .react-datepicker__triangle {
+    left: initial !important;
+    right: 50px;
+}
+
+.gds-form-group__text-help {
+    z-index: 10;
+}
+
+::placeholder {
+    color: #cacfd2 !important;
+    opacity: 1;
+    /* Firefox */
+}
+
+/* Bulk AdLines Associations Modal */
+.bulk-box {
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    border: 1px solid #dbdbdb;
+    height: 100%;
+    overflow: hidden;
+
+    .bulk-box__left,
+    .bulk-box__right,
+    .bulk-box__center {
+        width: 100%;
+        height: 100%;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 1px;
+            background-color: #dbdbdb;
+        }
+
+        &:last-child:after {
+            display: none;
+        }
+    }
+}
+
+.focus-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    transition: opacity 0.3s ease-out;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.focus-card-style {
+    z-index: 500;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.no-cursor-accordion h4 {
+    cursor: auto;
+}
+
+// Custom css for the snack notifications
+.gds-snackbar__notification-text::-webkit-scrollbar {
+    width: 4px;
+}
+
+.gds-snackbar__notification-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.gds-snackbar__notification-text::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+.gds-snackbar__notification-text::-webkit-scrollbar-thumb:hover {
+    background: whitesmoke;
+}
+
+.muted-link {
+    color: #8f8f8f;
+    cursor: pointer;
+}
+
+//Remove number input spinners
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+// SearchMultiSelect item with long text
+.gds-search-select__menu-items .gds-search-select__menu-item {
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/**
+ * BREADCRUMBS
+ */
+
+.gds-page-header__breadcrumbs-list-item {
+    text-transform: capitalize;
+}
+
+// Double max width limit
+.gds-page-header__breadcrumbs-list-item .-ellipsis {
+    max-width: 300px;
+}
+
+// Flex Restriction Groups
+.gds-flex-group-container {
+    display: flex;
+    flex-wrap: wrap;
+    .gds-button {
+        margin-bottom: 0.2rem !important;
+    }
+    .gds-restriction-set-type {
+        width: 100%;
+        margin-bottom: 0.2rem;
+        text-align: center;
+        font-style: italic;
+        font-size: 13px;
+    }
+    @media (min-width: 768px) {
+        .gds-layout__column--xl-3 {
+            width: 45%;
+            max-width: 45%;
+            margin-bottom: 1rem;
+        }
+        .gds-restriction-set-type {
+            padding: 0.6rem 0rem 0.75rem 0rem;
+            width: 25px;
+            margin-bottom: 1rem;
+        }
+    }
+    @media (min-width: 982px) {
+        flex-wrap: nowrap;
+    }
+    @media (min-width: 1200px) {
+        .gds-layout__column--xl-3 {
+            max-width: 25%;
+        }
+    }
+}
+
+// Maintenance page
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.rotating {
+    -webkit-animation: rotating 12s linear infinite;
+    -moz-animation: rotating 12s linear infinite;
+    -ms-animation: rotating 12s linear infinite;
+    -o-animation: rotating 12s linear infinite;
+    animation: rotating 12s linear infinite;
+}
+.activity-log-accordion.gds-accordion__item--active {
+    overflow: visible;
+    z-index: 2;
+    .accordion-content {
+        padding: 20px;
+    }
+    .gds-accordion__child-items {
+        max-height: none;
+        overflow: visible;
+        background-color: #fff;
+        .gds-accordion__child-item-title {
+            overflow: visible;
+        }
+    }
+}
