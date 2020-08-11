@@ -17,7 +17,7 @@ const AdPlacememts = ({}) => {
   // InScreenAd or InImageAd insertion
   const insertAd = async ({ isHTML = true }) => {
     try {
-      const adType = InScreenAd
+      const adType = InImageAd
       const node = document.getElementById('place')
       console.log(node)
       const endpoint = buildServerParams(40143, node, IN_IMAGE_ENDPOINT)
@@ -29,7 +29,10 @@ const AdPlacememts = ({}) => {
       console.log(adContent)
       console.log(adConfig)
       // Create ad with GUMGUM method
+      console.log(window)
+      console.log('GUMGUM', window.GUMGUM)
       const config = isHTML ? adConfig : window.GUMGUM[adType].fromAS(adConfig)
+      console.log(config)
       config.scriptset = []
       const ad = new window.GUMGUM[adType](config, node)
       // Insert ad to DOM
