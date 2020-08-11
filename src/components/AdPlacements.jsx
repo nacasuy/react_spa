@@ -35,6 +35,7 @@ const AdPlacememts = ({}) => {
       console.log(config)
       config.scriptset = []
       const ad = new window.GUMGUM[adType](config, node)
+      console.log(ad);
       // Insert ad to DOM
       ad.attach()
     } catch (err) {
