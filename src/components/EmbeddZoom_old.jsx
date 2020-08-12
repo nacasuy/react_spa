@@ -88,7 +88,6 @@ const EmbeddZoom = ({}) => {
           </Button>
         </Column>
       </Row>
-      <hr className="-m-b-3" />
     </Fragment>
   )
 }
