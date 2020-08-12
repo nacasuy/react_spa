@@ -8,7 +8,7 @@ const Polls = ({}) => {
     <Fragment>
       <Row>
         <Column md="12" className="-m-l-2 -m-b-2 -m-t-4">
-          <h3 className="gds-text--header-md -ellipsis -m-v-3">
+          <h3 className="gds-text--header-xs -ellipsis -m-v-3">
             Manage Poll(s)
           </h3>
           <div className="checkbox-list">

@@ -8,6 +8,8 @@ import EmbeddZoom from '../src/components/EmbeddZoom'
 import Polls from '../src/components/Polls'
 import ZoomStatistics from '../src/components/ZoomStatistics'
 import TranslationBot from '../src/components/TranslationBot'
+import MessageWall from '../src/components/MessageWall'
+
 function App () {
   return (
     <div className="app">
@@ -16,7 +18,7 @@ function App () {
           <h6 className="gds-page-header__product-name">Virtual in video</h6>
           <img
             className="gds-page-header__logo gds-page-header__logo--expanded"
-            src="https://c.gumgum.com/ads/com/gumgum/logo/logo-white.svg"
+            src="GG_PrimaryLogo_Reversed_Icon-01.eps.png"
           />
         </div>
       </header>
@@ -29,16 +31,17 @@ function App () {
             <Polls></Polls>
           </Column>
         </Row>
-        <hr className="-m-b-0" />
         <Row>
-          <Column md="6">
+          <Column md="4">
             <ZoomStatistics></ZoomStatistics>
           </Column>
-          <Column md="6">
+          <Column md="4">
             <TranslationBot></TranslationBot>
           </Column>
+          <Column md="4">
+            <MessageWall></MessageWall>
+          </Column>
         </Row>
-        <hr className="-m-b-0" />
         <Row>
           <AdPlacementsH></AdPlacementsH>
         </Row>

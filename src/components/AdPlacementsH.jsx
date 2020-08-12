@@ -18,7 +18,7 @@ const AdPlacememtsH = () => {
     try {
       const adType = InImageAd
       const node = document.getElementById('placeH')
-      const endpoint = buildServerParams(2117129, node, IN_IMAGE_ENDPOINT)
+      const endpoint = buildServerParams(2115730, node, IN_IMAGE_ENDPOINT)
       // Request in Image Ad
       const adContent = await fetchAd(endpoint)
       // Get config for gumgum.js
@@ -84,7 +84,7 @@ const AdPlacememtsH = () => {
     <Fragment>
       <Row>
         <Column md="12" >
-          <img id="placeH" onLoad={insertAd} style={{ margin: '1px', display: 'block' }} src="https://via.placeholder.com/1400x100.png" width="100%" height="100">
+          <img id="placeH" onLoad={insertAd} style={{ margin: '1px', display: 'block' }} src="https://via.placeholder.com/1400x80.png" width="100%" height="80">
           </img>
         </Column>
       </Row>
